@@ -1,7 +1,7 @@
 """
 Агент для анализа физических показателей и расчета макронутриентов.
 """
-from langchain_openai import ChatOpenAI
+from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain.prompts import ChatPromptTemplate
 from langchain.output_parsers import PydanticOutputParser
 
@@ -14,9 +14,10 @@ class NutritionAgent:
     
     def __init__(self):
         """Инициализация агента."""
-        self.llm = ChatOpenAI(
+        self.llm = ChatGoogleGenerativeAI(
             model=MODEL_NAME,
-            temperature=TEMPERATURE
+            temperature=TEMPERATURE,
+            convert_system_message_to_human=True
         )
         self.output_parser = PydanticOutputParser(pydantic_object=NutritionAnalysis)
         

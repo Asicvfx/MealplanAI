@@ -1,6 +1,6 @@
 langchain==0.1.10
 langgraph==0.0.30
-langchain-openai==0.0.5
+langchain-google-genai>=1.0.0
 python-dotenv==1.0.1
 pydantic==2.6.1
 

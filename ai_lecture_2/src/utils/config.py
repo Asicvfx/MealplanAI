@@ -8,16 +8,16 @@ from dotenv import load_dotenv
 load_dotenv()
 
 # API ключи
-OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
+GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY")
 
 # Настройки модели
-MODEL_NAME = "gpt-4-turbo-preview"
+MODEL_NAME = "gemini-flash-latest"
 TEMPERATURE = 0.7
 
 # Проверка наличия API ключа
-if not OPENAI_API_KEY:
+if not GOOGLE_API_KEY:
     raise ValueError(
-        "OPENAI_API_KEY не найден в переменных окружения. "
-        "Пожалуйста, создайте файл .env и добавьте OPENAI_API_KEY=ваш_ключ"
+        "GOOGLE_API_KEY не найден в переменных окружения. "
+        "Пожалуйста, создайте файл .env и добавьте GOOGLE_API_KEY=ваш_ключ"
     )
 
